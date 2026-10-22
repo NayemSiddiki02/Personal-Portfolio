@@ -7,6 +7,8 @@ const $ = s => document.querySelector(s),
     "'": '&#39;'
   } [c]));
 
+const asset = path => location.pathname.split('/').includes('public') ? path : `public/${path}`;
+
 function card(x, type = '') {
   if (type === 'skill') {
     const logoFiles = {
@@ -35,11 +37,11 @@ function card(x, type = '') {
     return `<article class="card skill-card"><h3>${esc(x.title)}</h3><div class="skill-logos">${items.map(name => {
       const logo = logoFiles[name];
       const mark = name === 'Assembly Language' ? 'ASM' : name.split(/\s+/).map(part => part[0]).join('').slice(0, 3).toUpperCase();
-      return `<div class="skill-item">${logo ? `<img src="${logo}" alt="${esc(name)} logo" loading="lazy">` : `<span class="skill-mark" aria-hidden="true">${esc(mark)}</span>`}<span>${esc(name)}</span></div>`;
+      return `<div class="skill-item">${logo ? `<img src="${asset(logo)}" alt="${esc(name)} logo" loading="lazy">` : `<span class="skill-mark" aria-hidden="true">${esc(mark)}</span>`}<span>${esc(name)}</span></div>`;
     }).join('')}</div></article>`;
   }
   let imgs = [x.image, ...String(x.gallery || '').split(/[\n,]+/).map(s => s.trim())].filter(Boolean);
-  return `<article class="card">${imgs.length?`<div class="gallery">${imgs.map(i=>`<img src="${esc(i)}" alt="${esc(x.title)}">`).join('')}</div>`:''}<span class="pill">${esc(x.category||'')}</span><h3>${esc(x.title)}</h3>${[x.subtitle,x.dateLabel,x.organization,x.result?'Result: '+x.result:''].filter(Boolean).map(v=>`<p class="meta">${esc(v)}</p>`).join('')}${x.details?`<p>${esc(x.details)}</p>`:''}${x.url?`<a href="${esc(x.url)}" target="_blank" rel="noopener">${['award','certificate'].includes(type)?'SHOW CREDENTIAL ↗':type==='project'?'GITHUB / PROJECT ↗':'VIEW DETAILS ↗'}</a>`:''}</article>`
+  return `<article class="card">${imgs.length?`<div class="gallery">${imgs.map(i=>`<img src="${esc(asset(i))}" alt="${esc(x.title)}">`).join('')}</div>`:''}<span class="pill">${esc(x.category||'')}</span><h3>${esc(x.title)}</h3>${[x.subtitle,x.dateLabel,x.organization,x.result?'Result: '+x.result:''].filter(Boolean).map(v=>`<p class="meta">${esc(v)}</p>`).join('')}${x.details?`<p>${esc(x.details)}</p>`:''}${x.url?`<a href="${esc(x.url)}" target="_blank" rel="noopener">${['award','certificate'].includes(type)?'SHOW CREDENTIAL ↗':type==='project'?'GITHUB / PROJECT ↗':'VIEW DETAILS ↗'}</a>`:''}</article>`
 }
 
 function render(id, rows, type, empty) {
@@ -83,7 +85,7 @@ function experienceCard(item) {
   const status = item.currentRole ? 'Present' : item.subtitle === 'Volunteer' ? 'Volunteer' : 'Past';
   const dateRange = item.dateLabel || `${formatMonth(start)} – ${item.currentRole ? 'Present' : formatMonth(end)} · ${formatDuration(durationMonths)}`;
   const logo = item.image
-    ? `<img class="experience-logo" src="${esc(item.image)}" alt="${esc(item.organization)} logo">`
+    ? `<img class="experience-logo" src="${esc(asset(item.image))}" alt="${esc(item.organization)} logo">`
     : `<div class="experience-logo experience-wordmark" aria-hidden="true">${esc((item.organization || '?').slice(0, 2).toUpperCase())}</div>`;
 
   return `<article class="experience-item">${logo}<div class="experience-details"><span class="experience-status">${status}</span><h3>${esc(item.title)}</h3><p class="experience-organization">${esc(item.organization)}${item.subtitle ? ` · ${esc(item.subtitle)}` : ''}</p><p class="experience-meta">${dateRange}</p>${item.location ? `<p class="experience-meta">${esc(item.location)}</p>` : ''}${item.details ? `<p>${esc(item.details)}</p>` : ''}</div></article>`;
@@ -101,7 +103,7 @@ async function init() {
   $('#intro').outerHTML = String(p.intro || '').split(/(?:\r?\n|\/n)/i).map(paragraph => paragraph.trim()).filter(Boolean)
     .map((paragraph, index) => `<p id="intro${index ? `-${index + 1}` : ''}" class="lead">${esc(paragraph)}</p>`).join('');
   $('#cv').href = p.cv;
-  $('#portrait').innerHTML = `<img src="${esc(p.photo)}" alt="Profile portrait" onerror="this.outerHTML='<div class=&quot;placeholder&quot;>ADD YOUR<br>PHOTO</div>'">`;
+  $('#portrait').innerHTML = `<img src="${esc(asset(p.photo))}" alt="Profile portrait" onerror="this.outerHTML='<div class=&quot;placeholder&quot;>ADD YOUR<br>PHOTO</div>'">`;
   const professionalMarks = {
     linkedin: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5.2 8.4H2V22h3.2V8.4ZM3.6 2a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8ZM22 14.2c0-4.1-2.2-6-5.1-6a4.4 4.4 0 0 0-3.9 2.1V8.4H9.8V22H13v-7.2c0-1.9.4-3.7 2.7-3.7s2.3 2.1 2.3 3.8V22h3.2l.8-7.8Z"/></svg>',
     github: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .9a11.2 11.2 0 0 0-3.54 21.82c.56.1.76-.24.76-.54v-2.1c-3.1.68-3.76-1.32-3.76-1.32-.5-1.3-1.24-1.65-1.24-1.65-1.01-.69.08-.68.08-.68 1.12.08 1.7 1.15 1.7 1.15 1 1.7 2.61 1.21 3.25.93.1-.72.39-1.21.71-1.49-2.48-.28-5.09-1.24-5.09-5.53 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.08 1.15a10.7 10.7 0 0 1 5.6 0c2.14-1.45 3.08-1.15 3.08-1.15.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.3-2.62 5.24-5.11 5.52.4.35.76 1.03.76 2.08v3.09c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .9Z"/></svg>',
@@ -122,7 +124,7 @@ async function init() {
     whatsapp: ['WhatsApp', 'whatsapp-icon.png']
   };
   $('#heroSocial').innerHTML = Object.entries(socialLinks).map(([key, [label, logo]]) => {
-    const icon = `<img class="${key === 'x' ? 'social-icon-x' : ''}" src="image/${logo}" alt="" aria-hidden="true">`;
+    const icon = `<img class="${key === 'x' ? 'social-icon-x' : ''}" src="${asset(`image/${logo}`)}" alt="" aria-hidden="true">`;
     return a[key]
       ? `<a class="social-link" href="${esc(a[key])}" target="_blank" rel="noopener noreferrer" aria-label="${label}" title="${label}">${icon}</a>`
       : `<span class="social-link is-unavailable" aria-label="${label} link not set" title="Add ${label} URL in Admin">${icon}</span>`;
