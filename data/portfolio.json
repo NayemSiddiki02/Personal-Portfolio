@@ -102,7 +102,8 @@
       "title": "Hostel Management System (C#)",
       "category": "Web Development Project",
       "url": "https://github.com/NayemSiddiki02/HOSTEL-MANAGMENT-SYSTEM-C-Sharp",
-      "details": "Designed and implemented a role-based management system.\nApplied object-oriented design principles and modular architecture."
+      "details": "Designed and implemented a role-based management system.\nApplied object-oriented design principles and modular architecture.",
+      "gallery": "image/Project_image/oop2/oop21.png, image/Project_image/oop2/oop22.png, image/Project_image/oop2/oop23.png, image/Project_image/oop2/oop24.png, image/Project_image/oop2/oop25.png, image/Project_image/oop2/oop26.png, image/Project_image/oop2/oop27.png, image/Project_image/oop2/oop28.png, image/Project_image/oop2/oop29.png, image/Project_image/oop2/oop210.png, image/Project_image/oop2/oop211.png, image/Project_image/oop2/oop212.png, image/Project_image/oop2/oop213.png, image/Project_image/oop2/oop214.png, image/Project_image/oop2/oop215.png, image/Project_image/oop2/oop216.png, image/Project_image/oop2/oop217.png, image/Project_image/oop2/oop218.png, image/Project_image/oop2/oop219.png, image/Project_image/oop2/oop220.png, image/Project_image/oop2/oop221.png, image/Project_image/oop2/oop222.png, image/Project_image/oop2/oop223.png"
     },
     {
       "id": "bus-ticket-management-java",
@@ -125,7 +126,8 @@
       "title": "Arduino-Based Smart Mop/Brush Cleaner Robot",
       "category": "EEE Project",
       "url": "https://github.com/NayemSiddiki02/Arduino-based-Smart-Mop-Brush-Cleaner-Robot",
-      "details": "Developed an autonomous four-wheel-drive cleaning robot using an Arduino Uno and L293D shield.\nIntegrated an HC-SR04 ultrasonic sensor on a servo motor for 180-degree obstacle scanning and real-time path planning.\nProgrammed a backward-then-soft-left navigation algorithm with averaged distance sensing to reduce noise and support smooth movement."
+      "details": "Developed an autonomous four-wheel-drive cleaning robot using an Arduino Uno and L293D shield.\nIntegrated an HC-SR04 ultrasonic sensor on a servo motor for 180-degree obstacle scanning and real-time path planning.\nProgrammed a backward-then-soft-left navigation algorithm with averaged distance sensing to reduce noise and support smooth movement.",
+      "gallery": "image/Project_image/arduino-smart-cleaner-robot/arduino-smart-cleaner-robot1.jpg, image/Project_image/arduino-smart-cleaner-robot/arduino-smart-cleaner-robot2.jpg"
     },
     {
       "id": "arduino-fire-smoke-detection",
@@ -138,13 +140,15 @@
       "id": "rain-detection-555-timer",
       "title": "Rain Detection and Alarming Using 555 Timer IC",
       "category": "EEE Project",
-      "details": "Designed a rain detection system using a 555 Timer IC in astable mode to trigger an audible alarm.\nUsed a BC547 transistor switching circuit to connect the rain sensor to the timer RESET pin.\nSelected resistor and capacitor values to produce a consistent 0.72 Hz alert frequency."
+      "details": "Designed a rain detection system using a 555 Timer IC in astable mode to trigger an audible alarm.\nUsed a BC547 transistor switching circuit to connect the rain sensor to the timer RESET pin.\nSelected resistor and capacitor values to produce a consistent 0.72 Hz alert frequency.",
+      "gallery": "image/Project_image/rain-detection-555/rain-detection-5551.jpg, image/Project_image/rain-detection-555/rain-detection-5552.jpg, image/Project_image/rain-detection-555/rain-detection-5553.jpg"
     },
     {
       "id": "dc-mobile-charger-fast-charging",
       "title": "Design and Implementation of a DC Mobile Charger with Fast Charging",
       "category": "EEE Project",
-      "details": "Built an adjustable power supply using a DC buck-boost module for voltage and current regulation.\nImplemented pulse-based switching with an LM555 Timer and complementary transistors.\nConstructed a full-wave bridge rectifier with a smoothing capacitor to convert AC mains to stable DC."
+      "details": "Built an adjustable power supply using a DC buck-boost module for voltage and current regulation.\nImplemented pulse-based switching with an LM555 Timer and complementary transistors.\nConstructed a full-wave bridge rectifier with a smoothing capacitor to convert AC mains to stable DC.",
+      "gallery":"image/Project_image/dc-mobile-charger.jpg"
     }
   ],
   "awards": [
