@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nayem Siddiki | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="head">
+      <a class="logo" id="logo" href="#home">Nayem<span>Siddiki</span></a>
+      <nav class="desktop" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="academic.html">Academic</a>
+        <a href="publication.html">Publication</a>
+        <a href="projects.html">Projects</a>
+        <a href="certification.html">Certification</a>
+        <a href="contact.html">Others</a>
+      </nav>
+      <button id="theme" aria-label="Toggle color theme">◐</button>
+      <nav id="mobile" class="mobile" aria-label="Mobile navigation">
+        <a href="#home">Home</a>
+        <a href="academic.html">Academic</a>
+        <a href="publication.html">Publication</a>
+        <a href="projects.html">Projects</a>
+        <a href="certification.html">Certification</a>
+        <a href="contact.html">Others</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="triangle"></div>
+        <div class="heroText">
+          <div id="professionalSocial" class="professional-social" aria-label="Professional profiles"></div>
+          <p class="eyebrow">HEY! There</p>
+          <h1>I am <span id="name">NAYEM SIDDIKI</span></h1>
+          <p class="role">A <span id="role"> RESEARCHER</span><i></i></p>
+          <!--<a class="outline" href="contact.html">CONTACT ME</a>-->
+        </div>
+        <div id="portrait" class="portrait">
+          <div class="placeholder">ADD YOUR<br>PHOTO<small>public/image/profile.jpg</small></div>
+        </div>
+        <nav id="heroSocial" class="social" aria-label="Social media links"></nav>
+      </section>
+
+      <section class="section" id="introduction">
+        <!-- 01 / INTRODUCTION -->
+        <div class="split">
+          <h2>Curiosity into<br><em>contribution.</em></h2>
+          <div>
+            <p id="intro" class="lead">I am a researcher interested in machine learning, natural language processing, and data-driven problem solving.</p>
+            <p class="intro-actions">
+              <a class="outline" id="cv" href="assets/cv.pdf">VIEW MY CV ↗</a>
+              <a class="outline" href="contact.html">CONTACT ME ↗</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="research-interests">
+        <h2>Research <em>interests</em></h2>
+        <ul class="interest-list">
+          <li>Machine Learning (ML)</li>
+          <li>Deep Learning (DL)</li>
+          <li>Natural Language Processing (NLP)</li>
+          <li>Computer Vision &amp; Pattern Recognition (CVPR)</li>
+          <li>Transformer-based Language Models</li>
+          <li>Physics Informed Neural Network (PINN)</li>
+          <li>Fluid Mechanics</li>
+          <li>Quantum Computing</li>
+          <li>Quantum Droplet</li>
+        </ul>
+      </section>
+
+      <section class="section soft" id="recent-work">
+        <div class="secthead">
+          <h2>Latest <em>research</em></h2>
+          <a href="publication.html">SEE MORE ↗</a>
+        </div>
+        <div id="latest" class="cards"></div>
+      </section>
+
+      <section class="section" id="technical-skills">
+        <!-- 05 / TOOLKIT -->
+        <h2>Technical <em>skills</em></h2>
+        <div id="skills" class="skill-groups"></div>
+      </section>
+
+      <section class="section soft" id="experience">
+        <h2>Experience &amp; <em>activities</em></h2>
+        <div id="experienceItems" class="experience-list"></div>
+      </section>
+
+      <section class="section languages-section" id="languages" aria-labelledby="languages-title">
+        <label>LANGUAGES</label>
+        <div class="language-heading">
+          <h2 id="languages-title">Words that <em>connect.</em></h2>
+        </div>
+        <div class="language-list">
+          <article class="language-row">
+            <h3>Bengali</h3>
+            <div class="language-rating">
+              <div class="language-dots" role="img" aria-label="5 out of 5">
+                <span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span>
+              </div>
+              <span class="language-proficiency">Native</span>
+            </div>
+          </article>
+          <article class="language-row">
+            <h3>English</h3>
+            <div class="language-rating">
+              <div class="language-dots" role="img" aria-label="4 out of 5">
+                <span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span><span></span>
+              </div>
+              <span class="language-proficiency">Limited Working Proficiency</span>
+            </div>
+          </article>
+          <article class="language-row">
+            <h3>Arabic</h3>
+            <div class="language-rating">
+              <div class="language-dots" role="img" aria-label="2 out of 5">
+                <span class="filled"></span><span class="filled"></span><span></span><span></span><span></span>
+              </div>
+              <span class="language-proficiency">Elementary Proficiency</span>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="logo" id="footerLogo" href="#home">Nayem<span>Siddiki</span></a>
+      <p id="copy">© Portfolio. All rights reserved.</p>
+      <a href="admin.html">Admin</a>
+    </footer>
+    <script src="data.js"></script><script src="app.js"></script>
+  </body>
+</html>

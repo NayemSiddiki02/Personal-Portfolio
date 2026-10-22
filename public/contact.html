@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Others | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="head">
+      <a class="logo" href="index.html">Nayem<span>Siddiki</span></a>
+      <nav class="desktop" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="academic.html">Academic</a>
+        <a href="publication.html">Publication</a>
+        <a href="projects.html">Projects</a>
+        <a href="certification.html">Certification</a>
+        <a href="contact.html" aria-current="page">Others</a>
+      </nav>
+      <button id="theme" aria-label="Toggle color theme">◐</button>
+      <nav id="mobile" class="mobile" aria-label="Mobile navigation">
+        <a href="index.html">Home</a>
+        <a href="academic.html">Academic</a>
+        <a href="publication.html">Publication</a>
+        <a href="projects.html">Projects</a>
+        <a href="certification.html">Certification</a>
+        <a href="contact.html" aria-current="page">Others</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="pagehero">
+        <label>OTHERS</label>
+        <h1>References &amp;<br><em>contact.</em></h1>
+        <p>Professional references and a way to get in touch.</p>
+      </section>
+
+      <section class="pagecontent">
+        <h2 class="subhead">REFERENCES</h2>
+        <div class="cards references">
+          <article class="card">
+            <h3>Dr. Abdus Salam</h3>
+            <p class="meta">Associate Professor</p>
+            <p>Department of Computer Science<br>American International University–Bangladesh</p>
+            <a href="mailto:abdus.salam@aiub.edu">abdus.salam@aiub.edu</a>
+          </article>
+          <article class="card">
+            <h3>Dr. Muhammad Morshed Alam</h3>
+            <p class="meta">Assistant Professor</p>
+            <p>Department of Electrical &amp; Electronic Engineering<br>American International University–Bangladesh</p>
+            <a href="mailto:dr.malam@aiub.edu">dr.malam@aiub.edu</a>
+          </article>
+        </div>
+
+        <section class="contact-details" aria-labelledby="contact-details-title">
+          <h2 class="subhead" id="contact-details-title">CONTACT DETAILS</h2>
+          <div class="cards">
+            <article class="card contact-detail-card">
+              <h3>Phone</h3>
+              <p><a href="tel:+8801774398961">+8801774398961</a></p>
+              <p><a href="tel:+880182840309">+880182840309</a></p>
+            </article>
+            <article class="card contact-detail-card">
+              <h3>Email</h3>
+              <p><a href="mailto:nayemsiddiki2002@gamil.com">nayemsiddiki2002@gamil.com</a></p>
+              <p><a href="mailto:23-52361-2@student.aiub.edu">23-52361-2@student.aiub.edu</a></p>
+            </article>
+            <article class="card contact-detail-card">
+              <h3>Present Address</h3>
+              <p>142/2A, Uttarpara Road, Khilkhet, Dhaka</p>
+            </article>
+            <article class="card contact-detail-card">
+              <h3>Permanent Address</h3>
+              <p>House/Holding: 313, Village/Street: Balutungi, Post Office: Adina College 6340, Shibganj, Chapainawabganj, Bangladesh</p>
+            </article>
+          </div>
+        </section>
+
+        <div class="contactpage">
+          <div class="contact-copy">
+            <label>GET IN TOUCH</label>
+            <h2>Have a question or an idea?</h2>
+            <p>Send me a message using the form. I’d be glad to hear from you about research, projects, or opportunities.</p>
+            <p id="email" class="contact-email"></p>
+          </div>
+
+          <form id="contactForm" class="contact-form">
+            <label for="contact-name">Your name</label>
+            <input id="contact-name" name="name" autocomplete="name" required>
+
+            <label for="contact-email">Email address</label>
+            <input id="contact-email" name="email" type="email" autocomplete="email" required>
+
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" rows="6" required></textarea>
+
+            <button class="solid" type="submit">SEND MESSAGE ↗</button>
+            <p id="status" class="contact-status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="logo" href="index.html">Nayem<span>Siddiki</span></a>
+      <p>© Portfolio. All rights reserved.</p>
+      <a href="admin.html">Admin</a>
+    </footer>
+    <script src="data.js"></script><script src="page.js"></script>
+  </body>
+</html>
