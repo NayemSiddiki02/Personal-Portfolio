@@ -496,6 +496,36 @@ h2 em,
   flex: 0 0 24px
 }
 
+.portfolio-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin: 0 5.5%;
+  background: #b47e38;
+  border: 1px solid #b47e38
+}
+
+.portfolio-stat {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px 16px;
+  background: #b47e38
+}
+
+.portfolio-stat strong {
+  font: 700 clamp(24px, 3vw, 38px)/1 Montserrat;
+  color: var(--surface)
+}
+
+.portfolio-stat span {
+  font: 500 12px Montserrat;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--surface)
+}
+
 .card p {
   font-size: 13px;
   line-height: 1.8;
@@ -1190,6 +1220,16 @@ footer p {
 
   .section {
     padding: 68px 6%
+  }
+
+  .portfolio-stats {
+    margin: 0 6%;
+    grid-template-columns: 1fr
+  }
+
+  .portfolio-stat {
+    justify-content: flex-start;
+    padding: 18px 20px
   }
 
   .split,

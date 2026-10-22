@@ -132,6 +132,44 @@ async function init() {
   $('#copy').textContent = `© ${new Date().getFullYear()} ${p.name}. All rights reserved.`;
   render('#latest', (d.publication || []).slice(0, 3), 'publication', 'Add publications in Admin.');
   render('#skills', portfolioFile.skills || [], 'skill', 'Add skills in data/portfolio.json.');
+  const programmingLanguages = (portfolioFile.skills || [])
+    .filter(skill => skill.title === 'Programming Languages')
+    .flatMap(skill => String(skill.details || '').split(',').map(name => name.trim()).filter(Boolean));
+  const skillCount = new Set(programmingLanguages).size;
+  const stats = [
+    ['#publicationCount', (d.publication || []).length],
+    ['#skillCount', skillCount],
+    ['#projectCount', (d.projects || []).length]
+  ];
+  stats.forEach(([selector, count]) => {
+    const element = $(selector);
+    element.dataset.count = count;
+    element.textContent = '0';
+  });
+  const statsBar = $('.portfolio-stats');
+  if (statsBar && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      if (!entries.some(entry => entry.isIntersecting)) return;
+      observer.disconnect();
+      stats.forEach(([selector, count]) => {
+        const element = $(selector);
+        const duration = 1000;
+        let start;
+        const animate = timestamp => {
+          if (start === undefined) start = timestamp;
+          const progress = Math.min((timestamp - start) / duration, 1);
+          const eased = 1 - (1 - progress) ** 3;
+          element.textContent = Math.floor(count * eased);
+          if (progress < 1) requestAnimationFrame(animate);
+          else element.textContent = count;
+        };
+        requestAnimationFrame(animate);
+      });
+    }, { threshold: 0.35 });
+    observer.observe(statsBar);
+  } else {
+    stats.forEach(([selector, count]) => { $(selector).textContent = count; });
+  }
   const experienceItems = (portfolioFile.experience || []).slice().sort((a, b) => (b.startDate || b.dateLabel || '').localeCompare(a.startDate || a.dateLabel || ''));
   $('#experienceItems').innerHTML = experienceItems.map(experienceCard).join('') || '<p class="empty">Add experience in data/portfolio.json.</p>';
 }
