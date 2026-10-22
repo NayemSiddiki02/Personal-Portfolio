@@ -55,7 +55,9 @@
       "id": "khoja-khuji-lost-found",
       "title": "Khoja-Khuji: A Lost and Found Management System Web App",
       "category": "Web Development Project",
-      "details": "A web-based lost and found management system.\nBuilt with HTML, CSS, JavaScript, PHP, and MySQL.\nIncludes practical features to support lost-item reporting and management."
+      "details": "A web-based lost and found management system.\nBuilt with HTML, CSS, JavaScript, PHP, and MySQL.\nIncludes practical features to support lost-item reporting and management.",
+      "url": "https://github.com/farhanchowdhury738/web_tech-lost-found-management-system",
+      "gallery": "image/Project_image/khoja-khuji.jpg"
     },
     {
       "id": "ai-generated-text-bert-distilbert",
