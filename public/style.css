@@ -52,10 +52,12 @@ textarea {
 
 .head {
   height: 85px;
-  position: absolute;
+  position: fixed;
   inset: 0 0 auto;
   z-index: 5;
   padding: 0 5.5%;
+  background: var(--surface);
+  box-shadow: 0 2px 12px #0001;
   display: flex;
   align-items: center;
   justify-content: space-between
