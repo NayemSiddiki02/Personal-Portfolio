@@ -1,9 +1,9 @@
 {
   "profile": {
     "name": "Nayem Siddiki",
-    "role": "QUANTUM RESEARCHER",
-    "intro": "I am Nayem Siddiki, an undergraduate student pursuing a degree in Computer Science and Engineering (CSE) at the American International University–Bangladesh (AIUB). I have a strong passion for mathematics, scientific research, and solving complex problems through computational methods. /n My academic interests include Natural Language Processing (NLP), machine learning, deep learning, and algorithmic problem-solving. I am particularly interested in exploring the intersection of computational intelligence, mathematics, and physical sciences. /n Currently, I am working on research related to fluid mechanics, with a focus on Physics-Informed Neural Networks (PINNs), as well as quantum droplets. I am interested in using mathematical modeling, numerical methods, and deep learning techniques to understand complex physical phenomena. /n My long-term goal is to contribute to meaningful research at the intersection of computer science, applied mathematics, artificial intelligence, and quantum physics.",
-    "email": "hello@example.com",
+    "role": " RESEARCHER",
+    "intro": "I am Nayem Siddiki, a CSE undergraduate student at the American International University–Bangladesh (AIUB), passionate about mathematics and scientific research. My interests include machine learning, deep learning, Natural Language Processing (NLP), and algorithmic problem-solving. Currently, I am exploring fluid mechanics using Physics-Informed Neural Networks (PINNs) and conducting research on quantum droplets, with a focus on the intersection of artificial intelligence, applied mathematics, and quantum physics.",
+    "email": "nayemsiddiki2002@gmail.com",
     "cv": "https://drive.google.com/file/d/1kHO_LoE1PZlFAHxz_aq8qXYnIAxBkRgY/view?usp=sharing",
     "photo": "image/profile.jpg",
     "accounts": {
@@ -131,7 +131,8 @@
       "id": "arduino-fire-smoke-detection",
       "title": "Arduino-Based Fire & Smoke Detection System",
       "category": "EEE Project",
-      "details": "Designed an Arduino Uno safety system with real-time audible and visual alerts.\nIntegrated infrared flame and MQ-2 gas sensors to detect fire and flammable smoke.\nBuilt an I2C alert interface with an active buzzer and 16×2 LCD.\nDeveloped embedded C++ logic with custom thresholds and active-low signal processing."
+      "details": "Designed an Arduino Uno safety system with real-time audible and visual alerts.\nIntegrated infrared flame and MQ-2 gas sensors to detect fire and flammable smoke.\nBuilt an I2C alert interface with an active buzzer and 16×2 LCD.\nDeveloped embedded C++ logic with custom thresholds and active-low signal processing.",
+      "gallery": "image/Project_image/arduino-fire-smoke/arduino-fire-smoke1.jpg, image/Project_image/arduino-fire-smoke/arduino-fire-smoke2.jpg, image/Project_image/arduino-fire-smoke/arduino-fire-smoke3.jpg"
     },
     {
       "id": "rain-detection-555-timer",

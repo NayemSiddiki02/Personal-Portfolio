@@ -102,13 +102,16 @@ async function init() {
     .map((paragraph, index) => `<p id="intro${index ? `-${index + 1}` : ''}" class="lead">${esc(paragraph)}</p>`).join('');
   $('#cv').href = p.cv;
   $('#portrait').innerHTML = `<img src="${esc(p.photo)}" alt="Profile portrait" onerror="this.outerHTML='<div class=&quot;placeholder&quot;>ADD YOUR<br>PHOTO</div>'">`;
+  const professionalMarks = {
+    linkedin: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5.2 8.4H2V22h3.2V8.4ZM3.6 2a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8ZM22 14.2c0-4.1-2.2-6-5.1-6a4.4 4.4 0 0 0-3.9 2.1V8.4H9.8V22H13v-7.2c0-1.9.4-3.7 2.7-3.7s2.3 2.1 2.3 3.8V22h3.2l.8-7.8Z"/></svg>',
+    github: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .9a11.2 11.2 0 0 0-3.54 21.82c.56.1.76-.24.76-.54v-2.1c-3.1.68-3.76-1.32-3.76-1.32-.5-1.3-1.24-1.65-1.24-1.65-1.01-.69.08-.68.08-.68 1.12.08 1.7 1.15 1.7 1.15 1 1.7 2.61 1.21 3.25.93.1-.72.39-1.21.71-1.49-2.48-.28-5.09-1.24-5.09-5.53 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.08 1.15a10.7 10.7 0 0 1 5.6 0c2.14-1.45 3.08-1.15 3.08-1.15.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.3-2.62 5.24-5.11 5.52.4.35.76 1.03.76 2.08v3.09c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .9Z"/></svg>',
+    orcid: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="currentColor"/><path fill="var(--paper)" d="M6.1 6.3h2.2v2.2H6.1zm0 3.7h2.2v7.8H6.1zm4.2 0h3.8c3 0 5.3 1.9 5.3 4.4s-2.3 4.4-5.3 4.4h-3.8V10Zm2.2 2v4.8h1.5c1.7 0 3-1 3-2.4s-1.3-2.4-3-2.4h-1.5Z"/></svg>',
+    researchgate: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="currentColor"/><text x="3.1" y="17.7" fill="var(--paper)" font-family="Georgia,serif" font-size="16" font-weight="700">R</text><text x="13" y="9.4" fill="var(--paper)" font-family="Georgia,serif" font-size="8" font-weight="700">G</text></svg>'
+  };
   $('#professionalSocial').innerHTML = [
-    ['linkedin', 'LinkedIn', 'LinkedIn_icon.png'],
-    ['github', 'GitHub', 'github_logo.png'],
-    ['orcid', 'ORCID', 'ORCID_iD.png'],
-    ['researchgate', 'ResearchGate', 'ResearchGate_icon.png']
-  ].map(([key, name, logo]) => a[key]
-    ? `<a href="${esc(a[key])}" target="_blank" rel="noopener noreferrer" aria-label="${name}" title="${name}"><img src="image/${logo}" alt=""></a>`
+    ['linkedin', 'LinkedIn'], ['github', 'GitHub'], ['orcid', 'ORCID'], ['researchgate', 'ResearchGate']
+  ].map(([key, name]) => a[key]
+    ? `<a href="${esc(a[key])}" target="_blank" rel="noopener noreferrer" aria-label="${name}" title="${name}">${professionalMarks[key]}</a>`
     : '').join('');
   const socialLinks = {
     facebook: ['Facebook', 'fb_logo.png'],

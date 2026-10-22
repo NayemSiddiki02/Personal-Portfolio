@@ -273,18 +273,20 @@ html[data-theme=dark] .social-icon-x {
 }
 
 .professional-social a {
-  display: grid;
-  width: 22px;
-  height: 22px;
-  place-items: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  line-height: 1;
+  text-decoration: none;
   transition: opacity .2s ease, transform .2s ease
 }
 
-.professional-social img {
+.professional-social svg {
   display: block;
-  width: 18px;
-  height: 18px;
-  object-fit: contain
+  width: 23px;
+  height: 23px;
+  color: var(--muted);
 }
 
 .professional-social a:hover {
