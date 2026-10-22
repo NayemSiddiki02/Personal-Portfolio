@@ -305,18 +305,40 @@ html[data-theme=dark] .social-icon-x {
 }
 
 .languages-section {
-  background: var(--paper)
+  background: var(--paper);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, .8fr);
+  column-gap: 8%;
+  align-items: center
+}
+
+.languages-section>label {
+  grid-column: 1;
+  grid-row: 1;
+  margin-bottom: 24px;
+  font-size: 22px
 }
 
 .language-heading {
-  margin-bottom: 26px
-}
-
-.language-heading h2 {
+  grid-column: 1;
+  grid-row: 2;
   margin: 0
 }
 
+.language-heading h2 {
+  max-width: 460px;
+  margin: 0;
+  font-size: clamp(38px, 4vw, 50px)
+}
+
+.language-heading h2 em {
+  font-size: .78em
+}
+
 .language-list {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  width: 100%;
   max-width: 680px
 }
 
@@ -336,7 +358,7 @@ html[data-theme=dark] .social-icon-x {
 .language-row h3 {
   margin: 0;
   color: var(--ink);
-  font: 500 16px Montserrat
+  font: 500 18px Montserrat
 }
 
 .language-rating {
@@ -348,7 +370,7 @@ html[data-theme=dark] .social-icon-x {
 .language-dots {
   display: flex;
   align-items: center;
-  gap: 12px
+  gap: 6px
 }
 
 .language-proficiency {
@@ -359,10 +381,10 @@ html[data-theme=dark] .social-icon-x {
 
 .language-dots span {
   display: block;
-  width: 15px;
-  height: 15px;
+  width: 18px;
+  height: 6px;
   border: 1px solid var(--line);
-  border-radius: 50%;
+  border-radius: 999px;
   background: transparent
 }
 
@@ -379,6 +401,10 @@ html[data-theme=dark] .social-icon-x {
   color: var(--accent);
   display: block;
   margin-bottom: 30px
+}
+
+.languages-section>label {
+  font-size: 17px
 }
 
 .split {
@@ -1117,6 +1143,11 @@ footer p {
     min-height: 680px
   }
 
+  .languages-section {
+    grid-template-columns: minmax(0, 1fr) minmax(260px, .9fr);
+    column-gap: 5%
+  }
+
   .split {
     gap: 6%
   }
@@ -1256,6 +1287,22 @@ footer p {
   .language-row {
     grid-template-columns: minmax(90px, 1fr) auto;
     gap: 16px
+  }
+
+  .languages-section {
+    grid-template-columns: 1fr;
+    row-gap: 24px
+  }
+
+  .languages-section>label,
+  .language-heading,
+  .language-list {
+    grid-column: 1;
+    grid-row: auto
+  }
+
+  .languages-section>label {
+    margin-bottom: -24px
   }
 
   .language-rating {
