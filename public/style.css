@@ -483,6 +483,19 @@ h2 em,
   margin: 12px 0
 }
 
+.contact-detail-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px
+}
+
+.contact-detail-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  flex: 0 0 24px
+}
+
 .card p {
   font-size: 13px;
   line-height: 1.8;
