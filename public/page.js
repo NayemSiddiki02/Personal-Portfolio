@@ -18,9 +18,9 @@ function card(x, t) {
 
 function educationRecord(x) {
   const logo = x.image
-    ? `<img class="education-logo" src="${e(x.image)}" alt="${e(x.title)} logo">`
-    : '';
-  return `<article class="education-record">${logo}<div class="education-details"><h2>${e(x.title)}</h2><p class="education-degree">${e(x.subtitle)}</p><p class="education-date">${e(x.dateLabel)}</p><p class="education-result">${e(x.result)}</p>${x.details ? `<p>${e(x.details)}</p>` : ''}</div></article>`;
+    ? `<div class="education-logo-wrap"><img class="education-logo" src="${e(x.image)}" alt="${e(x.title)} logo"></div>`
+    : '<div class="education-logo-wrap" aria-hidden="true"></div>';
+  return `<article class="education-record">${logo}<span class="education-node" aria-hidden="true"></span><div class="education-details"><span class="education-date">${e(x.dateLabel)}</span><h2>${e(x.title)}</h2><p class="education-degree">${e(x.subtitle)}</p><p class="education-result">${e(x.result)}</p>${x.details ? `<p>${e(x.details)}</p>` : ''}</div></article>`;
 }
 
 // Set up the theme before loading page data so the control works even when
