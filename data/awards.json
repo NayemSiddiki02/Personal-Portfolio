@@ -1,0 +1,32 @@
+[
+  {
+    "id": "deans-list-spring-2023-2024",
+    "title": "Dean’s List Honors",
+    "dateLabel": "Spring 2023–2024",
+    "organization": "American International University–Bangladesh",
+    "result": "CGPA: 3.99",
+    "image": "image/certificates/dean's list award spring 23-24.jpg"
+  },
+  {
+    "id": "deans-list-fall-2024-2025",
+    "title": "Dean’s List Honors",
+    "dateLabel": "Fall 2024–2025",
+    "organization": "American International University–Bangladesh",
+    "result": "CGPA: 3.98",
+    "image": "image/certificates/dean's list award fall 24-25.jpg"
+  },
+  {
+    "id": "deans-list-spring-2024-2025",
+    "title": "Dean’s List Honors",
+    "dateLabel": "Spring 2024–2025",
+    "organization": "American International University–Bangladesh",
+    "result": "CGPA: 4.00"
+  },
+  {
+    "id": "deans-list-fall-2025-2026",
+    "title": "Dean’s List Honors",
+    "dateLabel": "Fall 2025–2026",
+    "organization": "American International University–Bangladesh",
+    "result": "CGPA: 4.00"
+  }
+]

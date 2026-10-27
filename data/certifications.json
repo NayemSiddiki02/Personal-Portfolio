@@ -1,0 +1,74 @@
+[
+  {
+    "id": "large-language-models-concepts-datacamp-2026",
+    "title": "Large Language Models (LLMs) Concepts",
+    "organization": "DataCamp",
+    "dateLabel": "Oct 27, 2026",
+    "image": "image/certificates/LLMs_Concepts_certificate.jpg",
+    "url": "https://www.datacamp.com/completed/statement-of-accomplishment/course/d9975001c22688852a32f40d172d251adf832107"
+  },
+  {
+    "id": "introduction-to-git-datacamp-2026",
+    "title": "Introduction to Git",
+    "organization": "DataCamp",
+    "dateLabel": "Jul 12, 2026",
+    "url": "https://www.datacamp.com/completed/statement-of-accomplishment/course/5bbcf779f58e9d400785903d9603857ca8195a06",
+    "image": "image/certificates/Introduction_to_Git.jpg"
+  },
+  {
+    "id": "neuroflight-lab-ai-awareness-2026",
+    "title": "Certificate of Participation",
+    "subtitle": "AI Awareness: Opportunities, Risks, and Responsibility",
+    "dateLabel": "May 2, 2026",
+    "organization": "NeuroFlight Lab",
+    "image": "image/certificates/titlediAI Awareness.png"
+  },
+  {
+    "id": "mathematics-olympiad-2025",
+    "title": "Certificate of Participation",
+    "subtitle": "16th National Undergraduate Mathematics Olympiad",
+    "dateLabel": "Nov 21, 2025",
+    "organization": "Bangladesh Mathematical Society – AF Mujibur Rahman Foundation",
+    "image": "image/certificates/Mathematics Olympiad 2025.jpg"
+  },
+  {
+    "id": "getting-started-cisco-packet-tracer-2025",
+    "title": "Getting Started with Cisco Packet Tracer",
+    "organization": "Cisco Networking Academy",
+    "dateLabel": "Oct 29, 2025",
+    "url": "https://www.credly.com/badges/3befbd23-c4b9-4243-ad7a-34745f30311d",
+    "image": "image/certificates/getting-started-cisco-packet-tracer-2025.jpg"
+  },
+  {
+    "id": "foundational-csharp-microsoft-2025",
+    "title": "Foundational C# with Microsoft",
+    "organization": "freeCodeCamp",
+    "dateLabel": "Oct 18, 2025",
+    "url": "https://www.freecodecamp.org/certification/nayemsiddiki/foundational-c-sharp-with-microsoft",
+    "image": "image/certificates/foundational-csharp-microsoft-2025.jpg"
+  },
+  {
+    "id": "matlab-onramp-2025",
+    "title": "MATLAB Onramp",
+    "organization": "MathWorks",
+    "dateLabel": "Aug 14, 2025",
+    "url": "https://matlabacademy.mathworks.com/progress/share/certificate.html?id=a1972fec-79ea-48c0-9aaf-905e22acc996&",
+    "image": "image/certificates/matlab-onramp-2025.jpg"
+  },
+  {
+    "id": "it-essentials-cisco-2023",
+    "title": "IT Essentials: PC Hardware and Software",
+    "organization": "Cisco Networking Academy",
+    "dateLabel": "Aug 14, 2023",
+    "url": "https://www.credly.com/badges/3befbd23-c4b9-4243-ad7a-34745f30311d",
+    "image": "image/certificates/it-essentials-cisco-2023.jpg"
+  },
+  {
+    "id": "muktopaath-word-basics-2020",
+    "title": "Microsoft Word Basics",
+    "organization": "MuktoPaath",
+    "dateLabel": "2020",
+    "url": "https://certificate.muktopaath.gov.bd/storage/uploads/certificates/22854e19cca83519fd4dc656349edc3d.jpg",
+    "image": "image/certificates/muktopaath-word-basics-2020.jpg"
+  }
+]

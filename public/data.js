@@ -2,9 +2,13 @@
 const PORTFOLIO_DATA_KEY = 'portfolio-data';
 
 async function loadFilePortfolioData() {
-  const response = await fetch(location.pathname.split('/').includes('public') ? '../data/portfolio.json' : 'data/portfolio.json');
-  if (!response.ok) throw new Error('Could not load data/portfolio.json');
-  return response.json();
+  const dataPath = location.pathname.split('/').includes('public') ? '../data/' : 'data/';
+  const files = ['portfolio.json', 'projects.json', 'certifications.json', 'awards.json'];
+  const responses = await Promise.all(files.map(file => fetch(`${dataPath}${file}`)));
+  const failed = responses.findIndex(response => !response.ok);
+  if (failed !== -1) throw new Error(`Could not load ${dataPath}${files[failed]}`);
+  const [portfolio, projects, certifications, awards] = await Promise.all(responses.map(response => response.json()));
+  return { ...portfolio, projects, certifications, awards };
 }
 
 async function loadPortfolioData() {
