@@ -174,6 +174,8 @@ async function init() {
   }
   const experienceItems = (portfolioFile.experience || []).slice().sort((a, b) => (b.startDate || b.dateLabel || '').localeCompare(a.startDate || a.dateLabel || ''));
   $('#experienceItems').innerHTML = experienceItems.map(experienceCard).join('') || '<p class="empty">Add experience in data/portfolio.json.</p>';
+  const volunteeringItems = (portfolioFile.volunteering || []).slice().sort((a, b) => (b.startDate || b.dateLabel || '').localeCompare(a.startDate || a.dateLabel || ''));
+  $('#volunteeringItems').innerHTML = volunteeringItems.map(experienceCard).join('') || '<p class="empty">Add volunteering and activities in data/portfolio.json.</p>';
 }
 const root = document.documentElement;
 const savedTheme = localStorage.getItem('theme');

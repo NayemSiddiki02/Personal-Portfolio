@@ -185,6 +185,14 @@
   ],
   "certifications": [
     {
+      "id": "neuroflight-lab-ai-awareness-2026",
+      "title": "Certificate of Participation",
+      "subtitle": "AI Awareness: Opportunities, Risks, and Responsibility",
+      "dateLabel": "May 2, 2026",
+      "organization": "NeuroFlight Lab",
+      "image": "image/certificates/titlediAI Awareness.png"
+    },
+    {
       "id": "mathematics-olympiad-2025",
       "title": "Certificate of Participation",
       "subtitle": "16th National Undergraduate Mathematics Olympiad",
@@ -249,11 +257,6 @@
     },
     {
       "id": "s2",
-      "title": "Tools & Platforms",
-      "details": "MATLAB, Jupyter Notebook, Multisim, Arduino IDE, Proteus, AutoCAD 2007, Cisco Packet Tracer, XAMPP"
-    },
-    {
-      "id": "s3",
       "title": "Core Areas",
       "details": "Data Structures, Algorithms, Object-Oriented Programming, Machine Learning, Deep Learning, Natural Language Processing"
     }
@@ -329,7 +332,9 @@
       "location": "Remote",
       "image": "image/ELITElogo.png",
       "details": ""
-    },
+    }
+  ],
+  "volunteering": [
     {
       "id": "volunteer-bdmo-2025",
       "title": "Management Volunteer",

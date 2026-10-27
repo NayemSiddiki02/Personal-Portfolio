@@ -26,7 +26,8 @@ const types = {
   certifications: ['Licenses & Certifications', ['title', 'organization', 'dateLabel', 'details', 'image', 'gallery', 'url', 'sortOrder']],
   skills: ['Technical Skills', ['title', 'details', 'sortOrder']],
   interests: ['Research Interests', ['title', 'details', 'sortOrder']],
-  experience: ['Experience', ['title', 'organization', 'subtitle', 'dateLabel', 'startDate', 'endDate', 'currentRole', 'location', 'image', 'details', 'sortOrder']]
+  experience: ['Experience', ['title', 'organization', 'subtitle', 'dateLabel', 'startDate', 'endDate', 'currentRole', 'location', 'image', 'details', 'sortOrder']],
+  volunteering: ['Volunteering and Activities', ['title', 'organization', 'subtitle', 'dateLabel', 'startDate', 'endDate', 'currentRole', 'location', 'image', 'details', 'sortOrder']]
 };
 const labels = {
   title: 'Title',
@@ -114,9 +115,9 @@ function render() {
 
 function input(k, obj = {}) {
   let v = obj[k] ?? '';
-  if (section === 'experience' && k === 'startDate') return `<label>${labels[k]}<input id="startDate" name="startDate" type="month" value="${esc(v)}"></label>`;
-  if (section === 'experience' && k === 'endDate') return `<label>${labels[k]}<input id="endDate" name="endDate" type="month" value="${esc(v)}"></label>`;
-  if (section === 'experience' && k === 'currentRole') return `<label class="form-check wide"><input id="currentRole" name="currentRole" type="checkbox" ${v ? 'checked' : ''}> I am currently working in this role</label>`;
+  if (['experience', 'volunteering'].includes(section) && k === 'startDate') return `<label>${labels[k]}<input id="startDate" name="startDate" type="month" value="${esc(v)}"></label>`;
+  if (['experience', 'volunteering'].includes(section) && k === 'endDate') return `<label>${labels[k]}<input id="endDate" name="endDate" type="month" value="${esc(v)}"></label>`;
+  if (['experience', 'volunteering'].includes(section) && k === 'currentRole') return `<label class="form-check wide"><input id="currentRole" name="currentRole" type="checkbox" ${v ? 'checked' : ''}> I am currently working in this role</label>`;
   if (k === 'category') return `<label>Project category<select name="category">${['AI Project','Web Development Project','EEE Project'].map(x=>`<option ${v===x?'selected':''}>${x}</option>`).join('')}</select></label>`;
   if (k === 'details') return `<label class="wide">${labels[k]}<textarea name="${k}" rows="3">${esc(v)}</textarea></label>`;
   return `<label>${labels[k]||k}<input name="${k}" ${k==='sortOrder'?'type="number"':''} value="${esc(v)}" ${k==='title'?'required':''}></label>`
@@ -125,7 +126,8 @@ function save() { savePortfolioData(data); }
 
 function records() {
   let [label, fields] = types[section], rows = data[section], obj = rows.find(x => x.id === editId) || {};
-  $('#panel').innerHTML = `<h1>${label}</h1><p>Images use paths relative to public/, for example assets/project.jpg. Multiple images can be comma-separated.</p>${section === 'experience' ? '<p>Choose a start month and year. Select the checkbox for a current role; otherwise enter an end month and year.</p>' : ''}<form class="form" id="form"><input type="hidden" name="id" value="${esc(obj.id||'')}"><div class="fields">${fields.map(k=>input(k,obj)).join('')}</div><button class="solid">${editId?'UPDATE ITEM':'ADD ITEM'} ↗</button>${editId?'<button type="button" id="cancel">Cancel</button>':''}</form><div class="records">${rows.map(x=>`<article class="record"><div><h3>${esc(x.title)}</h3><p>${esc(section === 'experience' ? `${x.organization || ''} · ${x.startDate || ''}` : x.subtitle||x.category||x.dateLabel||'')}</p></div><div class="actions"><button data-edit="${esc(x.id)}">Edit</button><button class="del" data-del="${esc(x.id)}">Delete</button></div></article>`).join('')||'<p>No items yet.</p>'}</div>`;
+  const isTimeline = ['experience', 'volunteering'].includes(section);
+  $('#panel').innerHTML = `<h1>${label}</h1><p>Images use paths relative to public/, for example assets/project.jpg. Multiple images can be comma-separated.</p>${isTimeline ? '<p>Choose a start month and year. Select the checkbox for a current role; otherwise enter an end month and year.</p>' : ''}<form class="form" id="form"><input type="hidden" name="id" value="${esc(obj.id||'')}"><div class="fields">${fields.map(k=>input(k,obj)).join('')}</div><button class="solid">${editId?'UPDATE ITEM':'ADD ITEM'} ↗</button>${editId?'<button type="button" id="cancel">Cancel</button>':''}</form><div class="records">${rows.map(x=>`<article class="record"><div><h3>${esc(x.title)}</h3><p>${esc(isTimeline ? `${x.organization || ''} · ${x.startDate || x.dateLabel || ''}` : x.subtitle||x.category||x.dateLabel||'')}</p></div><div class="actions"><button data-edit="${esc(x.id)}">Edit</button><button class="del" data-del="${esc(x.id)}">Delete</button></div></article>`).join('')||'<p>No items yet.</p>'}</div>`;
   $('#form').onsubmit = async e => {
     e.preventDefault();
     let f = Object.fromEntries(new FormData(e.currentTarget)),
@@ -133,7 +135,7 @@ function records() {
       item = {
         id
       };
-    if (section === 'experience') {
+    if (isTimeline) {
       item = {
         id,
         title: f.title.trim(),
@@ -158,7 +160,7 @@ function records() {
     await save();
     render()
   };
-  if (section === 'experience') {
+  if (isTimeline) {
     const currentRole = $('#currentRole');
     const startDate = $('#startDate');
     const endDate = $('#endDate');
