@@ -56,7 +56,8 @@
       "title": "Machine Learning-Based Early Detection of Hb E Trait and α-Thalassemia Using CBC",
       "category": "AI Project",
       "details": "Evaluated XGBoost, LightGBM, Random Forest, SVM, and MLP using engineered CBC indices for four-class classification of Hb E trait and α-thalassemia.\nAchieved top performance with XGBoost, reaching an AUC of 0.9125 and an F1-score of 0.7667 on an independent external validation dataset of 625 samples.\nDeveloped a scalable, low-cost screening framework to enable early thalassemia detection in resource-limited clinical settings.",
-      "gallery": "image/Project_image/ml-early-detection-hb-e-thalassemia.jpg"
+      "gallery": "image/Project_image/ml-early-detection-hb-e-thalassemia.jpg",
+      "url": "https://github.com/NayemSiddiki02/ML-Course-Project-on-Hb-E-Trait-and--Thalassemia"
     },
     {
       "id": "khoja-khuji-lost-found",
