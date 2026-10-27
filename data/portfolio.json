@@ -52,6 +52,13 @@
   "publication": [],
   "projects": [
     {
+      "id": "ml-early-detection-hb-e-thalassemia",
+      "title": "Machine Learning-Based Early Detection of Hb E Trait and α-Thalassemia Using CBC",
+      "category": "AI Project",
+      "details": "Evaluated XGBoost, LightGBM, Random Forest, SVM, and MLP using engineered CBC indices for four-class classification of Hb E trait and α-thalassemia.\nAchieved top performance with XGBoost, reaching an AUC of 0.9125 and an F1-score of 0.7667 on an independent external validation dataset of 625 samples.\nDeveloped a scalable, low-cost screening framework to enable early thalassemia detection in resource-limited clinical settings.",
+      "gallery": "image/Project_image/ml-early-detection-hb-e-thalassemia.jpg"
+    },
+    {
       "id": "khoja-khuji-lost-found",
       "title": "Khoja-Khuji: A Lost and Found Management System Web App",
       "category": "Web Development Project",
@@ -148,7 +155,7 @@
       "title": "Design and Implementation of a DC Mobile Charger with Fast Charging",
       "category": "EEE Project",
       "details": "Built an adjustable power supply using a DC buck-boost module for voltage and current regulation.\nImplemented pulse-based switching with an LM555 Timer and complementary transistors.\nConstructed a full-wave bridge rectifier with a smoothing capacitor to convert AC mains to stable DC.",
-      "gallery":"image/Project_image/dc-mobile-charger.jpg"
+      "gallery": "image/Project_image/dc-mobile-charger.jpg"
     }
   ],
   "awards": [
