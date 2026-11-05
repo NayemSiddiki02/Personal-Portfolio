@@ -46,9 +46,63 @@ function educationRecord(x) {
 const root = document.documentElement;
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme === 'dark' || savedTheme === 'light') root.dataset.theme = savedTheme;
-$('#theme')?.addEventListener('click', () => {
+const themeToggle = $('#theme');
+const syncThemeToggle = () => themeToggle?.setAttribute('aria-checked', String(root.dataset.theme === 'dark'));
+syncThemeToggle();
+document.querySelectorAll('.head nav').forEach(nav => {
+  const links = [...nav.querySelectorAll('a[href]')];
+  if (!links.length) return;
+
+  const slider = document.createElement('span');
+  slider.className = 'nav-slider';
+  slider.setAttribute('aria-hidden', 'true');
+  nav.appendChild(slider);
+
+  const moveSlider = link => {
+    if (!link || !link.getClientRects().length) return;
+    const navRect = nav.getBoundingClientRect();
+    const linkRect = link.getBoundingClientRect();
+    slider.style.width = `${linkRect.width}px`;
+    slider.style.height = `${linkRect.height}px`;
+    slider.style.transform = `translate(${linkRect.left - navRect.left}px, ${linkRect.top - navRect.top}px)`;
+    slider.classList.add('is-positioned');
+  };
+
+  const currentLink = links.find(link => {
+    const target = new URL(link.href, location.href);
+    return target.pathname === location.pathname;
+  });
+  const initialLink = nav.querySelector('[aria-current="page"]') || currentLink;
+  if (initialLink) {
+    initialLink.setAttribute('aria-current', 'page');
+    requestAnimationFrame(() => moveSlider(initialLink));
+  }
+
+  links.forEach(link => link.addEventListener('click', () => moveSlider(link)));
+  window.addEventListener('resize', () => moveSlider(nav.querySelector('[aria-current="page"]')));
+  if (nav.id === 'mobile') {
+    document.querySelector('.menu-toggle')?.addEventListener('click', () => {
+      requestAnimationFrame(() => moveSlider(nav.querySelector('[aria-current="page"]')));
+    });
+  }
+});
+
+themeToggle?.addEventListener('click', () => {
   root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
   localStorage.setItem('theme', root.dataset.theme);
+  syncThemeToggle();
+
+  const particleColor = root.dataset.theme === 'dark' ? '#c5ad8d' : '#a8947b';
+  for (let i = 0; i < 16; i++) {
+    const particle = document.createElement('span');
+    particle.className = 'theme-particle';
+    particle.style.setProperty('--x', `${(Math.random() - 0.5) * 100}px`);
+    particle.style.setProperty('--y', `${(Math.random() - 0.5) * 70}px`);
+    particle.style.background = particleColor;
+    particle.style.boxShadow = `0 0 8px ${particleColor}`;
+    themeToggle.appendChild(particle);
+    setTimeout(() => particle.remove(), 800);
+  }
 });
 
 document.addEventListener('click', event => {

@@ -9,9 +9,25 @@ const $ = s => document.querySelector(s),
 const root = document.documentElement;
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme === 'dark' || savedTheme === 'light') root.dataset.theme = savedTheme;
-$('#theme')?.addEventListener('click', () => {
+const themeToggle = $('#theme');
+const syncThemeToggle = () => themeToggle?.setAttribute('aria-checked', String(root.dataset.theme === 'dark'));
+syncThemeToggle();
+themeToggle?.addEventListener('click', () => {
   root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
   localStorage.setItem('theme', root.dataset.theme);
+  syncThemeToggle();
+
+  const particleColor = root.dataset.theme === 'dark' ? '#c5ad8d' : '#a8947b';
+  for (let i = 0; i < 16; i++) {
+    const particle = document.createElement('span');
+    particle.className = 'theme-particle';
+    particle.style.setProperty('--x', `${(Math.random() - 0.5) * 100}px`);
+    particle.style.setProperty('--y', `${(Math.random() - 0.5) * 70}px`);
+    particle.style.background = particleColor;
+    particle.style.boxShadow = `0 0 8px ${particleColor}`;
+    themeToggle.appendChild(particle);
+    setTimeout(() => particle.remove(), 800);
+  }
 });
 const ADMIN_USERNAME = 'NayemSiddiki';
 const ADMIN_PASSWORD = 'admin490';
