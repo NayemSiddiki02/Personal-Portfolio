@@ -77,10 +77,14 @@ textarea {
   display: flex;
   gap: 22px;
   margin-left: auto;
-  margin-right: 20px
+  margin-right: 20px;
+  position: relative;
+  isolation: isolate
 }
 
 .desktop a {
+  position: relative;
+  z-index: 1;
   font-size: 12px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -88,6 +92,20 @@ textarea {
   align-items: center;
   gap: 7px
 }
+
+.nav-slider {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  border-radius: 999px;
+  background: var(--paper);
+  pointer-events: none;
+  opacity: 0;
+  transition: transform .38s cubic-bezier(.2,.8,.2,1), width .38s ease, height .38s ease, opacity .2s ease
+}
+
+.nav-slider.is-positioned { opacity: 1 }
 
 .desktop a img,
 .mobile a img {
@@ -1215,12 +1233,20 @@ footer p {
     padding: 8px 6% 14px;
     background: var(--surface);
     box-shadow: 0 6px 14px #0001;
-    white-space: normal
+    white-space: normal;
+    isolation: isolate
   }
 
   .mobile a {
+    position: relative;
+    z-index: 1;
     padding: 12px 0;
     border-top: 1px solid var(--line)
+  }
+
+  .mobile .nav-slider {
+    border-radius: 8px;
+    background: var(--paper)
   }
 
   .head {
