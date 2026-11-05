@@ -27,6 +27,17 @@
   font-size: 18px
 }
 
+.adminhead #theme img {
+  display: block;
+  width: 24px;
+  height: 24px;
+  object-fit: contain
+}
+
+html[data-theme=dark] .adminhead #theme img {
+  filter: invert(1)
+}
+
 .wrap {
   max-width: 1250px;
   margin: auto;
