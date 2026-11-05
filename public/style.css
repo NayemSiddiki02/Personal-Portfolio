@@ -94,6 +94,16 @@ textarea {
   font-size: 22px
 }
 
+.menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  font-size: 24px !important
+}
+
 .mobile {
   display: none
 }
@@ -1117,21 +1127,27 @@ footer p {
     display: none
   }
 
-  .mobile {
+  .menu-toggle {
+    display: inline-flex
+  }
+
+  .mobile.is-open {
     display: flex;
     position: absolute;
-    top: 70px;
+    top: 100%;
     left: 0;
     right: 0;
-    flex-direction: row;
-    gap: 18px;
-    overflow-x: auto;
-    padding: 12px 6%;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 6% 14px;
     background: var(--surface);
     box-shadow: 0 6px 14px #0001;
-    white-space: nowrap;
-    scrollbar-width: thin;
-    -webkit-overflow-scrolling: touch
+    white-space: normal
+  }
+
+  .mobile a {
+    padding: 12px 0;
+    border-top: 1px solid var(--line)
   }
 
   .head {
@@ -1171,21 +1187,6 @@ footer p {
 
   .desktop {
     display: none
-  }
-
-  .mobile {
-    display: flex;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    right: 0;
-    flex-direction: row;
-    gap: 18px;
-    overflow-x: auto;
-    padding: 12px 6%;
-    background: var(--surface);
-    box-shadow: 0 6px 14px #0001;
-    white-space: nowrap
   }
 
   .hero {

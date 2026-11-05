@@ -7,6 +7,24 @@ const $ = s => document.querySelector(s),
     "'": '&#39;'
   } [c]));
 
+const menuToggle = $('.menu-toggle');
+const mobileMenu = $('#mobile');
+menuToggle?.addEventListener('click', () => {
+  const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+  menuToggle.setAttribute('aria-expanded', String(!isOpen));
+  menuToggle.setAttribute('aria-label', isOpen ? 'Open navigation menu' : 'Close navigation menu');
+  menuToggle.textContent = isOpen ? '☰' : '×';
+  mobileMenu?.classList.toggle('is-open', !isOpen);
+});
+mobileMenu?.addEventListener('click', event => {
+  if (event.target.closest('a')) {
+    mobileMenu.classList.remove('is-open');
+    menuToggle?.setAttribute('aria-expanded', 'false');
+    menuToggle?.setAttribute('aria-label', 'Open navigation menu');
+    if (menuToggle) menuToggle.textContent = '☰';
+  }
+});
+
 function card(x, t) {
   let imgs = [x.image, ...String(x.gallery || '').split(',').map(s => s.trim())].filter(Boolean);
   const details = String(x.details || '').split(/\n+/).map(line => line.trim()).filter(Boolean);
