@@ -1,5 +1,13 @@
 [
   {
+    "id": "mathematics-olympiad-2026",
+    "title": "Certificate of Participation",
+    "subtitle": "17th National Undergraduate Mathematics Olympiad 2026",
+    "organization": "Bangladesh Mathematical Society-AF Mujibur Rahman Foundation",
+    "dateLabel": "Nov 6, 2026",
+    "image": "image/certificates/NUMO_2026.png"
+  },
+  {
     "id": "large-language-models-concepts-datacamp-2026",
     "title": "Large Language Models (LLMs) Concepts",
     "organization": "DataCamp",
@@ -26,7 +34,7 @@
   {
     "id": "mathematics-olympiad-2025",
     "title": "Certificate of Participation",
-    "subtitle": "16th National Undergraduate Mathematics Olympiad",
+    "subtitle": "16th National Undergraduate Mathematics Olympiad 2025",
     "dateLabel": "Nov 21, 2025",
     "organization": "Bangladesh Mathematical Society – AF Mujibur Rahman Foundation",
     "image": "image/certificates/Mathematics Olympiad 2025.jpg"
