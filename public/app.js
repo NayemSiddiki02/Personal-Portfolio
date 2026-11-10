@@ -117,7 +117,40 @@ async function init() {
   $('#logo').innerHTML = esc(p.name.split(/\s+/)[0]) + '<span>' + esc(p.name.split(/\s+/).slice(1).join('')) + '</span>';
   $('#footerLogo').innerHTML = $('#logo').innerHTML;
   $('#name').textContent = p.name.toUpperCase();
-  $('#role').textContent = p.role.toUpperCase();
+  const roles = [p.role, 'NLP RESEARCHER'].map(role => role.trim().toUpperCase()).filter(Boolean);
+  const roleElement = $('#role');
+  let roleIndex = 0;
+  let characterIndex = roles[roleIndex]?.length || 0;
+  roleElement.textContent = roles[roleIndex] || '';
+  if (roles.length > 1) {
+    const typeDelay = 90;
+    const pauseAfterTyping = 1800;
+    const pauseAfterErasing = 350;
+    const typeNextRole = () => {
+      if (characterIndex < roles[roleIndex].length) {
+        characterIndex++;
+        roleElement.textContent = roles[roleIndex].slice(0, characterIndex);
+        window.setTimeout(typeNextRole, typeDelay);
+        return;
+      }
+
+      window.setTimeout(() => {
+        roleIndex = (roleIndex + 1) % roles.length;
+        const eraseCurrentRole = () => {
+          if (characterIndex > 0) {
+            characterIndex--;
+            roleElement.textContent = roles[(roleIndex + roles.length - 1) % roles.length].slice(0, characterIndex);
+            window.setTimeout(eraseCurrentRole, typeDelay / 2);
+            return;
+          }
+
+          window.setTimeout(typeNextRole, pauseAfterErasing);
+        };
+        eraseCurrentRole();
+      }, pauseAfterTyping);
+    };
+    window.setTimeout(typeNextRole, pauseAfterTyping);
+  }
   $('#intro').outerHTML = String(p.intro || '').split(/(?:\r?\n|\/n)/i).map(paragraph => paragraph.trim()).filter(Boolean)
     .map((paragraph, index) => `<p id="intro${index ? `-${index + 1}` : ''}" class="lead">${esc(paragraph)}</p>`).join('');
   $('#cv').href = p.cv;
