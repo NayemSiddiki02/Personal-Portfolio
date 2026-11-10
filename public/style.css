@@ -628,31 +628,40 @@ h2 em,
 .portfolio-stats {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1px;
+  gap: 22px;
   margin: 0 5.5%;
-  background: #b47e38;
-  border: 1px solid #b47e38
 }
 
 .portfolio-stat {
   display: flex;
   align-items: baseline;
   justify-content: center;
-  gap: 12px;
-  padding: 24px 16px;
-  background: #b47e38
+  gap: 15px;
+  min-height: 96px;
+  padding: 20px 22px;
+  background: linear-gradient(135deg, #c18b48, #a96f2d);
+  border: 1px solid rgba(150, 96, 37, .3);
+  border-radius: 18px;
+  box-shadow: 0 10px 24px rgba(111, 72, 29, .14);
+  transition: transform .2s ease, box-shadow .2s ease
+}
+
+.portfolio-stat:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(111, 72, 29, .2)
 }
 
 .portfolio-stat strong {
-  font: 700 clamp(24px, 3vw, 38px)/1 Montserrat;
-  color: var(--surface)
+  font: 700 clamp(30px, 3.6vw, 44px)/1 Montserrat;
+  letter-spacing: -2px;
+  color: #fff
 }
 
 .portfolio-stat span {
-  font: 500 12px Montserrat;
-  letter-spacing: 1px;
+  font: 600 11px Montserrat;
+  letter-spacing: 1.4px;
   text-transform: uppercase;
-  color: var(--surface)
+  color: rgba(255, 255, 255, .9)
 }
 
 .card p {
@@ -1357,12 +1366,15 @@ footer p {
 
   .portfolio-stats {
     margin: 0 6%;
-    grid-template-columns: 1fr
+    grid-template-columns: 1fr;
+    gap: 14px
   }
 
   .portfolio-stat {
-    justify-content: flex-start;
-    padding: 18px 20px
+    justify-content: center;
+    min-height: 72px;
+    padding: 14px 20px;
+    border-radius: 16px
   }
 
   .split,
