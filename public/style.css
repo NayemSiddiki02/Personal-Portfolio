@@ -596,6 +596,10 @@ h2 em,
   gap: 16px
 }
 
+#certs {
+  grid-template-columns: repeat(3, minmax(0, 1fr))
+}
+
 .project-cards {
   grid-template-columns: repeat(3, minmax(0, 1fr))
 }
@@ -1288,6 +1292,10 @@ footer p {
 }
 
 @media(max-width:720px) {
+  #certs {
+    grid-template-columns: 1fr
+  }
+
   .head {
     height: 72px;
     padding: 0 6%
