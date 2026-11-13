@@ -544,6 +544,28 @@ h2 em,
   margin-top: 26px
 }
 
+.intro-photo {
+  margin: 0;
+  margin-top: calc(1.1 * clamp(30px, 3.5vw, 42px) + 25px);
+  align-self: start;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px #00000012;
+}
+
+.intro-copy h2 {
+  font-size: clamp(30px, 3.5vw, 42px);
+}
+
+.intro-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: center 42%;
+}
+
 .accounts {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -1391,6 +1413,14 @@ footer p {
   .contactpage {
     grid-template-columns: 1fr;
     gap: 25px
+  }
+
+  .intro-copy {
+    order: -1;
+  }
+
+  .intro-photo {
+    margin-top: 0;
   }
 
   .contact-copy {
