@@ -126,7 +126,7 @@ async function init() {
   let d = await loadPortfolioData(),
     f = location.pathname.split('/').pop();
   if (f === 'academic.html') $('#items').innerHTML = (d.academic || []).map(educationRecord).join('') || '<p class="empty">Add academic records in Admin.</p>';
-  if (f === 'publication.html') $('#items').innerHTML = (d.publication || []).map(x => card(x, 'publication')).join('') || '<p class="empty">Add publications in Admin.</p>';
+  if (f === 'publication.html') $('#items').innerHTML = (d.publication || []).map(x => card(x, 'publication')).join('') || '<p class="empty">No publications to display yet.</p>';
   if (f === 'projects.html') $('#items').innerHTML = ['AI Project', 'Web Development Project', 'EEE Project'].map(c => `<section><h2 class="subhead">${c}</h2><div class="cards project-cards">${(d.projects||[]).filter(x=>x.category===c).map(x=>card(x,'project')).join('')||'<p class="empty">No projects yet.</p>'}</div></section>`).join('');
   if (f === 'certification.html') {
     $('#awards').innerHTML = (d.awards || []).map(x => card(x, 'award')).join('') || '<p class="empty">No awards added yet.</p>';

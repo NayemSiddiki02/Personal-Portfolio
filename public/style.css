@@ -352,11 +352,12 @@ html[data-theme=dark] .theme-toggle-knob {
 .social-link img {
   width: 22px;
   height: 22px;
-  object-fit: contain
+  object-fit: contain;
+  filter: grayscale(1)
 }
 
-html[data-theme=dark] .social-icon-x {
-  filter: invert(1)
+html[data-theme=dark] .social-link img {
+  filter: grayscale(1) invert(1)
 }
 
 .social-link:not(.is-unavailable):hover {

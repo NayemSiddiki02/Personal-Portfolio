@@ -175,7 +175,7 @@ async function init() {
     whatsapp: ['WhatsApp', 'whatsapp-icon.png']
   };
   $('#heroSocial').innerHTML = Object.entries(socialLinks).map(([key, [label, logo]]) => {
-    const icon = `<img class="${key === 'x' ? 'social-icon-x' : ''}" src="${asset(`image/${logo}`)}" alt="" aria-hidden="true">`;
+    const icon = `<img src="${asset(`image/${logo}`)}" alt="" aria-hidden="true">`;
     return a[key]
       ? `<a class="social-link" href="${esc(a[key])}" target="_blank" rel="noopener noreferrer" aria-label="${label}" title="${label}">${icon}</a>`
       : `<span class="social-link is-unavailable" aria-label="${label} link not set" title="Add ${label} URL in Admin">${icon}</span>`;
@@ -183,7 +183,7 @@ async function init() {
   const socialFooter = $('#socialFooter');
   if (socialFooter) socialFooter.innerHTML = ['facebook', 'instagram', 'x'].map(k => `<a href="${esc(a[k])}" target="_blank" rel="noopener noreferrer">${k === 'x' ? 'X' : k} ↗</a>`).join('');
   $('#copy').textContent = `© ${new Date().getFullYear()} ${p.name}. All rights reserved.`;
-  render('#latest', (d.publication || []).slice(0, 3), 'publication', 'Add publications in Admin.');
+  render('#latest', (d.publication || []).slice(0, 3), 'publication', 'No publications to display yet.');
   render('#skills', portfolioFile.skills || [], 'skill', 'Add skills in data/portfolio.json.');
   const programmingLanguages = (portfolioFile.skills || [])
     .filter(skill => skill.title === 'Programming Languages')
