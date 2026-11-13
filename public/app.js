@@ -59,7 +59,7 @@ function card(x, type = '') {
     }).join('')}</div></article>`;
   }
   let imgs = [x.image, ...String(x.gallery || '').split(/[\n,]+/).map(s => s.trim())].filter(Boolean);
-  return `<article class="card">${imgs.length?`<div class="gallery">${imgs.map(i=>`<img src="${esc(asset(i))}" alt="${esc(x.title)}">`).join('')}</div>`:''}<span class="pill">${esc(x.category||'')}</span><h3>${esc(x.title)}</h3>${[x.subtitle,x.dateLabel,x.organization,x.result?'Result: '+x.result:''].filter(Boolean).map(v=>`<p class="meta">${esc(v)}</p>`).join('')}${x.details?`<p>${esc(x.details)}</p>`:''}${x.url?`<a href="${esc(x.url)}" target="_blank" rel="noopener">${['award','certificate'].includes(type)?'SHOW CREDENTIAL ↗':type==='project'?'GITHUB / PROJECT ↗':'VIEW DETAILS ↗'}</a>`:''}</article>`
+  return `<article class="card">${imgs.length?`<div class="gallery">${imgs.map(i=>`<img src="${esc(asset(i))}" alt="${esc(x.title)}">`).join('')}</div>`:''}<span class="pill">${esc(x.category||'')}</span><h3>${esc(x.title)}</h3>${[x.subtitle,x.dateLabel,x.organization,x.result?'Result: '+x.result:''].filter(Boolean).map(v=>`<p class="meta">${esc(v)}</p>`).join('')}${x.details?`<p>${esc(x.details)}</p>`:''}${x.url?`<a href="${esc(x.url)}" target="_blank" rel="noopener">${['award','certificate'].includes(type)?'SHOW CREDENTIAL':type==='project'?'GITHUB / PROJECT ↗':'VIEW DETAILS ↗'}</a>`:''}</article>`
 }
 
 function render(id, rows, type, empty) {
