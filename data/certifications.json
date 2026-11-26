@@ -1,5 +1,13 @@
 [
   {
+    "id": "natural-language-processing-in-python-datacamp-2026",
+    "title": "Natural Language Processing (NLP) in Python",
+    "organization": "DataCamp",
+    "dateLabel": "Nov 26, 2026",
+    "url": "https://app.datacamp.com/learn/courses/natural-language-processing-nlp-in-python",
+    "image": "image/certificates/Natural Language Processing (NLP) in Python.webp"
+  },
+  {
     "id": "retrieval-augmented-generation-rag-with-langchain-datacamp-2026",
     "title": "Retrieval Augmented Generation (RAG) with LangChain",
     "organization": "DataCamp",
