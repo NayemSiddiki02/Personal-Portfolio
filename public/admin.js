@@ -134,7 +134,7 @@ function input(k, obj = {}) {
   if (['experience', 'volunteering'].includes(section) && k === 'startDate') return `<label>${labels[k]}<input id="startDate" name="startDate" type="month" value="${esc(v)}"></label>`;
   if (['experience', 'volunteering'].includes(section) && k === 'endDate') return `<label>${labels[k]}<input id="endDate" name="endDate" type="month" value="${esc(v)}"></label>`;
   if (['experience', 'volunteering'].includes(section) && k === 'currentRole') return `<label class="form-check wide"><input id="currentRole" name="currentRole" type="checkbox" ${v ? 'checked' : ''}> I am currently working in this role</label>`;
-  if (k === 'category') return `<label>Project category<select name="category">${['AI Project','Web Development Project','EEE Project'].map(x=>`<option ${v===x?'selected':''}>${x}</option>`).join('')}</select></label>`;
+  if (k === 'category') return `<label>Project category<select name="category">${['AI Project','Web Development Project','EEE Project','DataCamp Projects'].map(x=>`<option ${v===x?'selected':''}>${x}</option>`).join('')}</select></label>`;
   if (k === 'details') return `<label class="wide">${labels[k]}<textarea name="${k}" rows="3">${esc(v)}</textarea></label>`;
   return `<label>${labels[k]||k}<input name="${k}" ${k==='sortOrder'?'type="number"':''} value="${esc(v)}" ${k==='title'?'required':''}></label>`
 }

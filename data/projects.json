@@ -105,5 +105,21 @@
     "category": "EEE Project",
     "details": "Built an adjustable power supply using a DC buck-boost module for voltage and current regulation.\nImplemented pulse-based switching with an LM555 Timer and complementary transistors.\nConstructed a full-wave bridge rectifier with a smoothing capacitor to convert AC mains to stable DC.",
     "gallery": "image/Project_image/dc-mobile-charger.jpg"
+  },
+  {
+    "id": "classifying-emails-using-llama",
+    "title": "Classifying Emails using Llama",
+    "category": "DataCamp Projects",
+    "details": "Built an AI-powered inbox assistant to classify your emails using Llama.",
+    "url": "https://www.datacamp.com/completed/statement-of-accomplishment/project/56b8f052-b0c3-48b9-95a3-7d85fbf6bbb0",
+    "gallery": "image/Project_image/Classifying Emails using Llama.webp"
+  },
+  {
+    "id": "analyzing-car-reviews-with-llms",
+    "title": "Analyzing Car Reviews with LLMs",
+    "category": "DataCamp Projects",
+    "details": "Used LLMs to solve diverse language tasks for a car dealership company.",
+    "url": "https://www.datacamp.com/completed/statement-of-accomplishment/project/43f67c7d-e53a-49a7-8df9-32e9b57ff50e",
+    "gallery": "image/Project_image/Analyzing Car Reviews_with_LLMs.webp"
   }
 ]
